@@ -1,0 +1,5 @@
+## Steps to build the PHP based web app
+docker build -t webimage .  
+docker run -dit --name web --link=postgrest -p 80:80 webimage  
+docker exec -i -t web /bin/bash  
+

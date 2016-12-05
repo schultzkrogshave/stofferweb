@@ -1,0 +1,850 @@
+ <!-- <input type="text" name="create_date" id='create_date'> -->
+
+<script type="text/javascript">
+	$('#create_date').datetimepicker({
+		format : "yyyy-mm-dd hh:ii:ss",
+		autoclose : true,
+		todayBtn : true,
+		pickerPosition : "bottom-left",
+		startDate : new Date(),
+		todayHighlight : true
+	});
+
+	var redirecturl = window.location.href;
+	var url=redirecturl.split('#');	
+	if(url[1]=='/update'){
+		$('#create_date').prop('disabled',true);
+	}
+</script> 
+
+<div class="col-lg-12 col-md-12">
+	<!-- <p class="alert alert-danger" ng-show="errormessage">
+		{{errormsg}}
+	</p>
+	<p class="alert alert-success" ng-show="successmessage">
+		{{successmsg}}
+	</p> -->
+	<div class="row">
+		<div class="col-lg-12">
+		
+			<!-- <div class="form-group" ng-class="{ 'has-error' : dyr.$invalid && submitted }"> -->
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">uniquedocid</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.uniquedocid" name="uniquedocid" >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">kemisk_navn</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.kemisk_navn" name="kemisk_navn"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">mst_klas_dsd</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.mst_klas_dsd" name="mst_klas_dsd"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">create_date</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.create_date" name="create_date" id="create_date" >
+						<!-- <input 	class="date-control" type="text" ng-model="addcoupon.dt1" name="dt1" ui-date ui-date-format="dd/mm/yy" min-date="minDate" ng-change="checkPastDate()"> -->
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">mst_klas_clp</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.mst_klas_clp" name="mst_klas_clp"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">klas_stofdirektiv</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.klas_stofdirektiv" name="klas_stofdirektiv"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">maerkning_stofdirektiv</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.maerkning_stofdirektiv" name="maerkning_stofdirektiv"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">maerkning_stofdirektiv_lofs</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.maerkning_stofdirektiv_lofs" name="maerkning_stofdirektiv_lofs"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">lofs_anm</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.lofs_anm" name="lofs_anm"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">lofs_signatur</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.lofs_signatur" name="lofs_signatur"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+
+
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">klash_clp</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.klash_clp" name="klash_clp"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">klash_clp_graenser</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.klash_clp_graenser" name="klash_clp_graenser"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">euhs_aetninger</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.euhs_aetninger" name="euhs_aetninger"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">maerkning_clp</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.maerkning_clp" name="maerkning_clp"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">maerkning_clp_lofs</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.maerkning_clp_lofs" name="maerkning_clp_lofs"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">signalord</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.signalord" name="signalord"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">noter_clp</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.noter_clp" name="noter_clp"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">cas_nr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.cas_nr" name="cas_nr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">cas_nr_bem</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.cas_nr_bem" name="cas_nr_bem"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">cas_nr_interne_bem</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.cas_nr_interne_bem" name="cas_nr_interne_bem"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">einecs_nr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.einecs_nr" name="einecs_nr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">synonymer</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.synonymer" name="synonymer"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">index_nr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.index_nr" name="index_nr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">lofs_nummer</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.lofs_nummer" name="lofs_nummer"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">beaerkninger</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.beaerkninger" name="beaerkninger"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">lofs_clp</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.lofs_clp" name="lofs_clp"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">oral_dyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.oral_dyr" name="oral_dyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">oral_testtype</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.oral_testtype" name="oral_testtype"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">oral_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.oral_resultat" name="oral_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">oral_testar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.oral_testar" name="oral_testar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">oral_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.oral_kilde" name="oral_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">oral_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.oral_kildea" name="oral_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">dermal_dyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.dermal_dyr" name="dermal_dyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">dermal_testtype</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.dermal_testtype" name="dermal_testtype"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">dermal_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.dermal_resultat" name="dermal_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">dermal_testar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.dermal_testar" name="dermal_testar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">dermal_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.dermal_kilde" name="dermal_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">dermal_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.dermal_kildea" name="dermal_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_dyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_dyr" name="inhalation_dyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_eksponeringstid</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_eksponeringstid" name="inhalation_eksponeringstid"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_tilstandsform</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_tilstandsform" name="inhalation_tilstandsform"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_testtype</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_testtype" name="inhalation_testtype"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_resultat" name="inhalation_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_testar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_testar" name="inhalation_testar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_kilde" name="inhalation_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">inhalation_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.inhalation_kildea" name="inhalation_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">hudirritation_dyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.hudirritation_dyr" name="hudirritation_dyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">hudirritation_dosis</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.hudirritation_dosis" name="hudirritation_dosis"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">hudirritation_varighed</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.hudirritation_varighed" name="hudirritation_varighed"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">hudirritation_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.hudirritation_resultat" name="hudirritation_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">hudirritation_testar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.hudirritation_testar" name="hudirritation_testar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">hudirritation_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.hudirritation_kilde" name="hudirritation_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">hudirritation_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.hudirritation_kildea" name="hudirritation_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">ojenirritation_dyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.ojenirritation_dyr" name="ojenirritation_dyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">ojenirritation_dosis</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.ojenirritation_dosis" name="ojenirritation_dosis"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">ojenirritation_varighed</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.ojenirritation_varighed" name="ojenirritation_varighed"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">ojenirritation_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.ojenirritation_resultat" name="ojenirritation_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">ojenirritation_testar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.ojenirritation_testar" name="ojenirritation_testar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">ojenirritation_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.ojenirritation_kilde" name="ojenirritation_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">ojenirritation_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.ojenirritation_kildea" name="ojenirritation_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">luftvejsirritation_dyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.luftvejsirritation_dyr" name="luftvejsirritation_dyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">luftvejsirritation_dosis</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.luftvejsirritation_dosis" name="luftvejsirritation_dosis"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">luftvejsirritation_varighed</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.luftvejsirritation_varighed" name="luftvejsirritation_varighed"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">luftvejsirritation_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.luftvejsirritation_resultat" name="luftvejsirritation_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">luftvejsirritation_testar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.luftvejsirritation_testar" name="luftvejsirritation_testar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">luftvejsirritation_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.luftvejsirritation_kilde" name="luftvejsirritation_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">luftvejsirritationkildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.luftvejsirritationkildea" name="luftvejsirritationkildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">overfolsomhed_dyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.overfolsomhed_dyr" name="overfolsomhed_dyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">overfolsomhed_dosis</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.overfolsomhed_dosis" name="overfolsomhed_dosis"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">overfolsomhed_varighed</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.overfolsomhed_varighed" name="overfolsomhed_varighed"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">overfolsomhed_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.overfolsomhed_resultat" name="overfolsomhed_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">overfolsomhed_testar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.overfolsomhed_testar" name="overfolsomhed_testar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">overfolsomhed_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.overfolsomhed_kilde" name="overfolsomhed_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">overfolsomhed_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.overfolsomhed_kildea" name="overfolsomhed_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">enkelt_ekspodyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.enkelt_ekspodyr" name="enkelt_ekspodyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">enkelt_ekspodosis</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.enkelt_ekspodosis" name="enkelt_ekspodosis"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">enkelt_ekspovarighed</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.enkelt_ekspovarighed" name="enkelt_ekspovarighed"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">enkelt_eksporesultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.enkelt_eksporesultat" name="enkelt_eksporesultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">enkelt_ekspotestar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.enkelt_ekspotestar" name="enkelt_ekspotestar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">enkelt_ekspokilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.enkelt_ekspokilde" name="enkelt_ekspokilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">enkelt_ekspokildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.enkelt_ekspokildea" name="enkelt_ekspokildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">gentagen_ekspodyr</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.gentagen_ekspodyr" name="gentagen_ekspodyr"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">gentagen_ekspodosis</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.gentagen_ekspodosis" name="gentagen_ekspodosis"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">gentagen_ekspovarighed</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.gentagen_ekspovarighed" name="gentagen_ekspovarighed"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">gentagen_eksporesultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.gentagen_eksporesultat" name="gentagen_eksporesultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">gentagen_ekspotestar</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.gentagen_ekspotestar" name="gentagen_ekspotestar"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">gentagen_ekspokilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.gentagen_ekspokilde" name="gentagen_ekspokilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">gentagen_ekspokildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.gentagen_ekspokildea" name="gentagen_ekspokildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">kraefteffekt_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.kraefteffekt_resultat" name="kraefteffekt_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">kraefteffekt_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.kraefteffekt_kilde" name="kraefteffekt_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">kraefteffekt_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.kraefteffekt_kildea" name="kraefteffekt_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">mutageneffekt_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.mutageneffekt_resultat" name="mutageneffekt_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">mutageneffekt_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.mutageneffekt_kilde" name="mutageneffekt_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">mutageneffekt_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.mutageneffekt_kildea" name="mutageneffekt_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">repeffekt_resultat</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.repeffekt_resultat" name="repeffekt_resultat"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">repeffekt_kilde</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.repeffekt_kilde" name="repeffekt_kilde"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div><div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">repeffekt_kildea</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.repeffekt_kildea" name="repeffekt_kildea"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">andre_test</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.andre_test" name="andre_test"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">bemaerkninger</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.bemaerkninger" name="bemaerkninger"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">miljorxegenvur</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.miljorxegenvur" name="miljorxegenvur"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">n_klas</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.n_klas" name="n_klas"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<label class="col-sm-3 control-label">akut_fisk_artsnavn</label>
+					<div class="col-sm-9">
+						<input 	class="form-control" type="text" ng-model="info.akut_fisk_artsnavn" name="akut_fisk_artsnavn"  >
+						<!-- <p ng-show="addcouponForm.special_txt.$invalid && submitted" class="help-block">ADD</p> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// $('#create_date').datetimepicker({
+	// 	format : "yyyy-mm-dd hh:ii:ss",
+	// 	autoclose : true,
+	// 	todayBtn : true,
+	// 	pickerPosition : "bottom-left"
+	// });
+
+</script>

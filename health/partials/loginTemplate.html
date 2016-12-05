@@ -1,0 +1,77 @@
+
+<div class="container">
+	<!-- Main Conatiner Data -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<form class="well form-horizontal" name="userForm" ng-submit="login()" novalidate autocomplete="off" id="loginform">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 hidden-xs text-center"></div>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 text-center">
+								<p class="alert alert-danger" ng-show="errormessage">
+									{{errormsg}}
+								</p>
+								<p class="alert alert-success" ng-show="successmessage">
+									{{successmsg}}
+								</p>
+								<h3 class="form-signin-heading">Sign in</h3>
+							</div>
+						</div>
+
+						<div class="form-group" >
+							<label class="col-lg-3 col-md-3 col-sm-3 col-xs-12 control-label" for="TestForm_textField">Username</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+								<input class="form-control" name="uname" id="userName" type="text" ng-model="user.userName" required placeholder="User Name">
+								<!-- <input name="uname"	type="text" style="display:none;" placeholder="User Name"> -->
+							</div>
+							<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+								<p ng-show="userForm.uname.$invalid && submitted "
+								class="help-block text-right">
+									Please enter a valid email address.
+								</p>
+							</div> -->
+						</div>
+
+						<div class="form-group" >
+							<label class="col-lg-3 col-md-3 col-sm-3 col-xs-12 control-label" for="TestForm_password">Password</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+								<input class="form-control"  name="password" id="password" placeholder="Password" type="password" ng-model="user.password" required ng-minlength="3" ng-maxlength="14">
+								<!-- <input name="password"	type="password" style="display:none;" placeholder="password"> -->
+							</div>							
+						</div>
+
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 hidden-xs text-center"></div>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 text-center">
+							<div class="btn-group" role="group" aria-label="...">
+								<button type="submit" class="btn btn-primary">
+									SIGN IN
+								</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- End Of main Container Data -->
+</div>
+<!-- <div class="ajax-loader" id="ajax-loader" ng-show="loader">
+	<div class="loader-body">
+		<img src="resources/images/ajax-loader.gif" alt="Processing..." />
+		<span>
+			<p>
+				{{Constants.USER_MESSAGE_PROCESSING}}
+			</p> </span>
+	</div>
+</div> -->
+
+<div class="footer">
+	<div class="container text-center">
+		<p class="text-muted">
+			Copyright 2016, All Rights Reserved
+		</p>
+	</div>
+</div>

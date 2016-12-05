@@ -1,0 +1,75 @@
+<ng-include src="'partials/menuTemplate.html'"></ng-include>
+<form class="form-horizontal form-add" name="addcouponForm" ng-submit="submitForm()" id="addcouponForm" autocomplete="off" >
+	<div class="modal-header">
+		<h3 class="modal-title">UPDATE</h3>
+	</div>
+	<div class="bd-example">
+		<!-- <div ng-show="showalert" class="alert alert-danger" role="alert">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		  	<span class="sr-only">Error:</span>
+		  	{{Constants.ERROR_COUPON_INVALID_END_DATE}}
+		</div> -->
+		<p class="alert alert-danger" ng-show="errormessage">
+				{{errormsg}}
+			</p>
+			<p class="alert alert-success" ng-show="successmessage">
+				{{successmsg}}
+			</p>
+		<tabset>
+			<tab>
+		    	<tab-heading>
+		      		<span>Tab</span><em>1</em>
+		    	</tab-heading>
+
+				<div class="row">
+					<div class="col-lg-12 col-md-12"  ng-include="'partials/tab2.html'">
+					</div>
+				</div>
+			</tab>
+			<tab>
+				<tab-heading>
+		      		<span>Tab</span><em>2</em>
+		    	</tab-heading>
+		    	<div class="row">
+					<div class="col-lg-12 col-md-12" ng-include="'partials/tab3.html'">
+					</div>
+				</div>
+			</tab>
+			<!-- <tab>
+				<tab-heading>
+		      		<span>Tab</span><em>3</em>
+		    	</tab-heading>
+		    	<div class="row">
+					<div class="col-lg-12 col-md-12" ng-include="'partials/tab4.html'">
+					</div>
+				</div>
+			</tab> -->
+		</tabset>
+		<div class="ajax-loader" id="ajax-loader" ng-show="loader">
+			<div class="loader-body">
+				<img src="resources/images/ajax-loader.gif" alt="Processing..." />
+				<span>
+					<p>
+						Loading...
+					</p> </span>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" type="submit">
+				UPDATE
+			</button>
+			<button class="btn btn-warning" ng-click="cancel()">
+				CANCEL
+			</button>
+		</div>
+		<!--<input type="hidden" model="info.maxscan"  ng-init="info.maxscan = '-1'">
+		<input type="hidden" model="info.maxuserscan" ng-init="info.maxuserscan = '-1'">
+		<input type="hidden" model="info.maxshare"ng-init="info.maxshare = '-1'">
+		<input type="hidden" model="info.maxusershare" ng-init="info.maxusershare = '-1'">
+		<input type="hidden" model="info.bonus" ng-init="info.bonus= '0'">
+		<input type="hidden" model="info.scan_prize" ng-init="info.scan_prize = '0'">
+		<input type="hidden" model="info.share_prize" ng-init="info.share_prize = '0'">-->
+
+</form>
+
+

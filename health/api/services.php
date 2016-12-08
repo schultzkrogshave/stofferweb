@@ -1,9 +1,9 @@
 <?php
-        $serviceDomain = "http://postgrest:3000";//http://test.enovate-it.com:3000
 
+	$GLOBALS['HOST'] = 'http://test.enovate-it.com:3000';
 	function getList($range) {
 		$result = array ();
-		$serviceUrl = $serviceDomain.'/renestoffer?select=id,uniquedocid,kemisk_navn,create_date,einecs_nr&order=id.desc';
+		$serviceUrl = $GLOBALS['HOST'].'/renestoffer?select=id,uniquedocid,kemisk_navn,create_date,einecs_nr&order=id.desc';
 		
 		$headers = array(
 				'Content-Type: application/json',
@@ -23,7 +23,7 @@
 		return $array;
 	}
 	function add($data) {
-		$serviceUrl = $serviceDomain.'/renestoffer';
+		$serviceUrl = $GLOBALS['HOST'].'/renestoffer';
 		
 		$dataString=json_encode($data);
 		$headers = array(
@@ -46,7 +46,7 @@
 	}
 	
 	function delete($id) {
-		$serviceUrl = $serviceDomain.'/renestoffer?id=eq.'.$id;
+		$serviceUrl = $GLOBALS['HOST'].'/renestoffer?id=eq.'.$id;
 			
 		$headers = array(
 				'Content-Type: application/json'
@@ -68,7 +68,7 @@
 
 	function getData($id){
 		$result = array ();
-		$serviceUrl = $serviceDomain."/renestoffer?id=eq.".$id;
+		$serviceUrl = $GLOBALS['HOST']."/renestoffer?id=eq.".$id;
 		
 		$headers = array(
 				'Content-Type: application/json'
@@ -86,7 +86,7 @@
 	}
 	
 	function update($data,$id) {
-		$serviceUrl = $serviceDomain.'/renestoffer?id=eq.'.$id;
+		$serviceUrl = $GLOBALS['HOST'].'/renestoffer?id=eq.'.$id;
 	
 		$dataString=json_encode($data);
 		$headers = array(
@@ -110,7 +110,7 @@
 	
 	function search($data){
 		$result = array ();
-		$serviceUrl = $serviceDomain.'/rpc/searchfun';
+		$serviceUrl = $GLOBALS['HOST'].'/rpc/searchfun';
 		
 		$dataString=json_encode($data);
 		$headers = array(

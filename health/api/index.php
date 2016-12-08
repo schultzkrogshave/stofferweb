@@ -1,8 +1,8 @@
 <?php
 require_once 'services.php';
 
-ini_set ( 'error_reporting', E_ALL );
-ini_set ( 'display_errors', 1 );
+//ini_set ( 'error_reporting', E_ALL );
+//ini_set ( 'display_errors', 1 );
 if (isset ( $_REQUEST ['api'] ) && $_REQUEST ['api'] != '') {
 	$apiName = $_REQUEST ['api'];
 	$response = array();

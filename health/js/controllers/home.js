@@ -226,7 +226,7 @@ function HomeCtrl($scope, $http, $rootScope, localStorageService, $location, $wi
     }
 
     $scope.deleteInfo=function(id){
-        var ret=window.confirm('Are you sure want to logout?');
+        var ret=window.confirm('Are you sure want to delete this record?');
         if(ret==true)
         {       
             $scope.loader=true;
@@ -279,18 +279,20 @@ function HomeCtrl($scope, $http, $rootScope, localStorageService, $location, $wi
                 'Content-Type' : 'application/json'
             }
         }).success(function(response,status,headers) {
-            var result = angular.fromJson(response['data'][0]['searchfun'])
+            if(response['data'][0] !=undefined){
+                var result = angular.fromJson(response['data'][0]['searchfun'])
 
-            if(result == '' || result == undefined){
-                $scope.errormessage=true;
-                $scope.errormsg = 'No record found';
-                $scope.loader=false;
-                return false;
-            }
+                if(result == '' || result == undefined){
+                    $scope.errormessage=true;
+                    $scope.errormsg = 'No record found';
+                    $scope.loader=false;
+                    return false;
+                }
 
-            for(i=0;i<result.length;i++){
-                $scope.items.push(result[i]);
-                $scope.allItems.push(result[i]);
+                for(i=0;i<result.length;i++){
+                    $scope.items.push(result[i]);
+                    $scope.allItems.push(result[i]);
+                }
             }
 
             // localStorage.setItem('allItems',angular.toJson($scope.allItems));
